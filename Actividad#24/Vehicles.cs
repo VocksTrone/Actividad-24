@@ -90,17 +90,20 @@ namespace Actividad_24
             }
             Console.ReadKey();
         }
-        public static void AttendVehicle(ref PriorityStack urgentRepairs, ref ReparationQueue routineRepairs)
+        public static void RepairVehicle(ref PriorityStack urgentRepairs, ref ReparationQueue routineRepairs)
         {
             if (urgentRepairs.IsEmpty() && routineRepairs.IsEmpty())
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nSin Vehículos para Atender");
                 Console.ResetColor();
-                return;
             }
             else
             {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("--- Reparar Vehículo ---");
+                Console.ResetColor();
                 Vehicles attendedVehicle = urgentRepairs.IsEmpty() ? routineRepairs.Dequeue() : urgentRepairs.Unstack();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nVehículo Atendido:");

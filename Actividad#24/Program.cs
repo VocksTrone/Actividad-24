@@ -46,7 +46,7 @@ void SwitchFirstMenu()
             Vehicles.AddVehicle(ref urgentRepairs, ref routineRepairs);
             break;
         case 2:
-            Vehicles.AttendVehicle(ref urgentRepairs, ref routineRepairs);
+            Vehicles.RepairVehicle(ref urgentRepairs, ref routineRepairs);
             break;
         case 3:
             Vehicles.ShowAllVehicles(ref urgentRepairs, ref routineRepairs);
